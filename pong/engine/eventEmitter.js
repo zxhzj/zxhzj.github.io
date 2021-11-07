@@ -1,3 +1,0 @@
-class EventEmitter extends RenderObject {
-    
-}
