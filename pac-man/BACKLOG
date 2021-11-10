@@ -1,0 +1,32 @@
+# This is a feature backlog.
+
+- create informational website to replace github
+    - phase out all the markdown readmes from github
+
+- cookie-man
+    - change ghost sprites to muppet sprites
+
+- two player mode
+    - (cocktail option for screen flipping?)
+
+- cutscenes
+    - pac-man 2,3
+    - ms. pac-man 2,3
+    - cookie-man 1,2,3
+
+- puzzles
+    - experiment with puzzle mode
+- mapgen
+    - post-resize path-shifting for more diversity
+    - write article
+    - automated tester to check for sharp turns and deads and wide paths
+    - hidden debug canvas to display cells and tiles to help track potential bugs
+    - map a cell group to a size indicating number of cells attached to it?
+
+fullscreen:
+http://jlongster.com/2011/11/21/canvas.html
+
+audio:
+https://developer.mozilla.org/en-US/docs/Introducing_the_Audio_API_Extension
+
+
