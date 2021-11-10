@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: black;
+            color: white;
+        }
+        canvas {
+            position: absolute;
+            left:0;
+            top:50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+Scale: <input type='text' id='scaleInput' onkeydown="if (event.keyCode == 13) refresh()"></input>
+</div>
+<canvas id='atlas'></canvas>
+<canvas id='gridcanvas'></canvas>
+
+<script>
+var renderScale = 3;
+</script>
+
+<script src="../src/direction.js"></script>
+<script src="../src/sprites.js"></script>
+<script src="../src/atlas.js"></script>
+<script>
+
+var refresh = function() {
+    var scale = parseFloat(document.getElementById('scaleInput').value);
+    if (isNaN(scale) || !(scale > 0 && scale <= 20) ) {
+        alert('not a valid scale (0 < scale <= 20');
+        return;
+    }
+    renderScale = scale;
+    atlas.create();
+};
+
+window.onload = function() {
+    document.getElementById('scaleInput').value = renderScale.toString();
+    refresh();
+};
+</script>
+</body>
+</html>
