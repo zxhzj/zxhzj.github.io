@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "PressStart2P";
+  src: 
+    url("./assets/fonts/PressStart2P.ttf") format("truetype"), 
+    url("./assets/PressStart2P.woff") format("woff"), 
+    url("./assets/PressStart2P.woff2") format("woff2"); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 999;
+}
+
+#github {
+  right: 0;
+}
+
+#sound {
+  color: white;
+  cursor: pointer;
+  left: 20px;
+  bottom: 20px;
+}
+
+#logo-container {
+  margin: 0;
+  height: 100vh;
+}
+
+#logo {
+  position: fixed;
+  width: 80%;
+  min-width: 400px;
+  max-width: 600px;
+  top: calc(50% - 60px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#start {
+  position: fixed;
+  width: 145px;
+  height: 45px;
+  top: calc(50% + 60px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  border: 2px solid black;
+  font-size: 1.3em;
+  font-weight: bold;
+  outline: none;
+  transition: .3s;
+  color: black;
+  background-color: white;
+}
+
+#start:hover, #start:active {
+  cursor: pointer;
+  color: white;
+  background-color: red;
+}
+
+#start:disabled {
+  color: black;
+  background-color: white;
+}
+
+#gameover, #ready {
+  position: fixed;
+  top: calc(50% - 30px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.2em;
+  color: red;
+  font-family: 'PressStart2P';
+  text-shadow: 2px 2px black;
+  display: none;
+  white-space: nowrap;
+}
+
+#ready {
+  color: yellow;
+  display: none;
+}
+
+.blink {
+  animation-name: changeColor;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes changeColor {
+  from {color: #2121DE;}
+  to {color: white;}
+}
