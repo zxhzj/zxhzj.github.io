@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="mapgen.js"></script>
+<script src="colors.js"></script>
+<script src="Map.js"></script>
+</head>
+<body>
+<p>
+<button onclick="draw()">Click to generate new maps</button>
+</p>
+
+<canvas id='canvas'></canvas>
+
+<script>
+var draw = function() {
+    var canvas = document.getElementById('canvas');
+
+    var rows = 4;
+    var cols = 4;
+    var w,h;
+    w = 28*8;
+    h = 36*8;
+    canvas.width = w*cols;
+    canvas.height = h*rows;
+
+    var ctx = canvas.getContext('2d');
+
+    var map;
+    var x,y;
+    for (y=0; y<rows; y++) {
+        for (x=0; x<cols; x++) {
+            map = mapgen();
+            map.draw(ctx,x*w,y*h);
+        }
+    }
+
+    //drawResult(ctx,(cols+2)*size,size,size);
+    //drawResult2(ctx,(2*cols+3)*size,size,size);
+    //drawTiles(ctx,(cols+2)*size,size,size);
+
+};
+
+window.onload = function() {
+    draw();
+};
+
+</script>
+</body>
+</html>
