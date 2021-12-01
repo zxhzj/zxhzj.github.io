@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+
+<!-- Re-designed by @Yot360 lol -->
+
+<head>
+    <title>Kahoot Botter</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+    <meta name="author" content="DarthOCE">
+    <meta name="description" content="The Fastest kahoot Botter on the Internet!, Made by DarthOCE">
+    <meta name="keywords" content="DarthOCE, Kahoot Botter">
+    <meta name="language" content="English">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css?newcache2"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://kahootbotter.live">Kahoot Botter</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="https://kahootbotter.live">Home</a></li>
+              <li><a href="https://discord.com/api/oauth2/authorize?client_id=894342726210945054&permissions=532576300096&scope=bot">Discord Bot</a></li>
+              <li><a href="https://kahootbotter.live/discord/">Discord Server</a></li>
+              <li><a href="https://kahootbotter.live/faq/">FAQ</a></li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+    <div class='background'></div>
+    <div class='container'>
+        <h1 class='title'>
+            Kahoot Botter
+        </h1>
+        <h4 class='explanation'>
+            Deploy hundreds of kahoot bots to infiltrate and take over any public Kahoot game!<br>
+            Use wisely... <a href="https://kahootbotter.live">https://kahootbotter.live</a> is not responsible for any consequences from use of this tool. 
+        </h4><br><br>
+        <div class='form'>
+            Game PIN:<br>
+            <input class='input' type='number' id='pin' placeholder='000000'><br>
+            <span class='error' id='pinError'></span><br>
+            Bot Names, separated by commas:<br>
+            (Each bot will choose a random one of these names)<br>
+            <input class='input' type='text' id='name' placeholder='kahootbotter.live, kahootbotter.live/discord' value='kahootbotter.live, kahootbotter.live/discord'><br>
+            <span class='error' id='nameError'></span><br>
+
+            <label for="ans">Bot will answer: </label><br>
+            <select class="input" name="ans" id="ans">
+                <option value="random">Randomly</option>
+                <option value="never">Never</option>
+                <option value="0">First (Red Triangle)</option>
+                <option value="1">Second (Blue Diamond)</option>
+            </select><br><br>
+            Number of bots:<br>
+            <input class='input' type='number' id='num' placeholder='100' value='100'><br>
+            <span class='error' id='numError'></span><br>
+            <button class='button' onclick="go()" id="button">Bot the Kahoot!</button><br>
+            <span id='success' class='success'></span>
+            <h5 class="credits">Made by DarthOCE</h5>
+        </div>
+    </div>
+
+</body>
+<script>
+    function go() {
+        var valid = true;
+        var pin = document.getElementById('pin').value.toString();
+        if (pin.length <= 2 || pin.length > 10) {
+            document.getElementById('pinError').innerHTML = 'Error: Invalid Game PIN<br>';
+            valid = false;
+        } else {
+            document.getElementById('pinError').innerHTML = '';
+        }
+        var name = document.getElementById('name').value.replace(/\,\s/g, ',');
+        if (name.length < 1) {
+            document.getElementById('nameError').innerHTML = 'Error: Enter at least 1 name<br>';
+            valid = false;
+        } else {
+            document.getElementById('nameError').innerHTML = '';
+        }
+        var num = Number(document.getElementById('num').value);
+        if(num < 1 || num > 1000) {
+            document.getElementById('numError').innerHTML = 'Error: Must be between 1-1000<br>';
+            valid = false;
+        } else {
+            document.getElementById('numError').innerHTML = '';
+        }
+        if (valid) {
+            document.getElementById('button').innerHTML = ' Joining... ';
+            document.getElementById('success').innerHTML = '';
+            var url = `https://kahootbotter.t3ar.repl.co/?uid=${Date.now()}&pin=${pin}&names=${encodeURIComponent(name)}&ans=${document.getElementById('ans').value}&numBots=${num}`;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log('Response: ' + this.responseText);
+                    document.getElementById('button').innerHTML = 'Botted!';
+                    document.getElementById('success').innerHTML = 'Bots have joined!<br>If it didn\'t work, make sure the PIN you entered was correct.<br>Otherwise, try lowering the number of bots and try again.';
+                }
+            }
+            xhttp.open("GET", url, true);  
+            xhttp.send();
+        }
+    }
+
+    function init() {
+        var url = `https://kahootbotter.t3ar.repl.co`;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    console.log('REPL woken up');
+                }
+            }
+            xhttp.open("GET", url, true); 
+            xhttp.send();
+    }
+    init();
+</script>
+
+</html>

@@ -1,0 +1,115 @@
+.container {
+    padding: 30px;
+    background-color: transparent;
+}
+
+.background {
+    z-index: -1;
+    opacity: 1.0;
+    background-color: #202020;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.title {
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+@media screen and (orientation:portrait) {
+    .title {
+        font-size: 8vw;
+    }
+}
+
+.navbar.navbar-inverse{
+    border-radius: 12px;
+}
+
+.explanation {
+    text-align: center;
+    color: white;
+    font-family: 'Verdana'
+}
+
+.form {
+    text-align: center;
+    color: white;
+    font-family: 'Verdana'
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+.input {
+    font-size: 1em;
+    color: #202020;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.77;
+    border: none;
+    border-radius: 11px;
+}
+
+.input:focus{
+    opacity: 1;
+}
+
+#numBots {
+    width: 4em;
+}
+
+.button {
+    font-size: 1.4em;
+    font-family: 'Arial Black';
+    padding: 12px;
+    cursor: pointer;
+    align-items: center;
+    background-color: #202020;
+    color: white;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 11px;
+    box-shadow: -0.5px -0.5px 2px 2px gray;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background: #474747;
+}
+
+.button:active {
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
+}
+
+.button:focus {
+    outline: none;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
