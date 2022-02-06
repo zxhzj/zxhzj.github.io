@@ -1,4 +1,4 @@
-# Study Lqb
+# Study Lab
 I have created Study to help others do better in school.
 ## Permission
 I give permission to fork because these games are not mine, I just copy them here. Read the licenses in the game folders for more info.
