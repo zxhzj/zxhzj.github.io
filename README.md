@@ -1,5 +1,5 @@
-# Study Lab
-I have created Study to help others do better in school.
+# Library for Project Pog
+This is the games library for Project Pog
 ## Permission
 I give permission to fork because the resources here are not mine, I just copy them here. Read the licenses in the game folders for more info.
 ## Responsibility
