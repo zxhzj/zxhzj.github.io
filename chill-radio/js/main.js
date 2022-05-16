@@ -59,7 +59,7 @@
                                     className: "nav" + (a ? " show-main-nav-items" : ""),
                                     id: "nav",
                                     children: [
-                                        { href: "/GameLib", text: "Home" },
+                                        { href: "", text: "" },
                                     ].map(function (t, e) {
                                         return Object(k.jsx)("li", { children: Object(k.jsx)("a", { href: t.href, rel: "noopener noreferrer", target: "_blank", children: t.text }) }, e);
                                     }),
